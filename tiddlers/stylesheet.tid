@@ -15,6 +15,10 @@ ul.checklist > li {
 
 /* input form */
 
+.hideme {
+    display:none;
+}
+
 .checklist-newitem-icon::before {
     content: "&#x270e;";
 }
@@ -26,7 +30,7 @@ input.checklist-newitem {
     border: none;
     border-bottom: solid 2px <<colour sidebar-tab-background>>;
     transition: border 0.3s;
-    width: calc(100% - 2em - 20px);
+    width: calc(100% - 3em - 20px);
 }
 
 input:focus.checklist-newitem {

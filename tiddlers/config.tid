@@ -1,3 +1,7 @@
+move-checked: true
+show-clearall: false
+show-input: false
+strike-checked: true
 title: $:/plugins/tgrosinger/tw5-checklist/Configuration
 
 Please see the [[homepage|https://grosinger.net/tw5-checklist/]] for more information on the options.
@@ -23,6 +27,13 @@ Save and reload the wiki to activate changes.
     <th align="left" class="rerendering-required">Show Clear-All: </th>
     <td>
         <$checkbox field="show-clearall" tiddler="$:/plugins/tgrosinger/tw5-checklist/Configuration"
+            checked="true" unchecked="false" default="true"></$checkbox>
+    </td>
+  </tr>
+  <tr>
+    <th align="left">Show input box for new entries above the list:</th>
+    <td>
+        <$checkbox field="show-input" tiddler="$:/plugins/tgrosinger/tw5-checklist/Configuration"
             checked="true" unchecked="false" default="true"></$checkbox>
     </td>
   </tr>

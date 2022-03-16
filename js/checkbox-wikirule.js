@@ -21,6 +21,18 @@ exports.init = function(parser) {
 };
 
 /*
+Retrieve the configuration state indicating whether the input block should be shown above the list
+*/
+
+exports.showInput= function() {
+    var configWidgetTitle = "$:/plugins/tgrosinger/tw5-checklist/Configuration";
+    var configWidgetFields = $tw.wiki.getTiddler(configWidgetTitle).fields;
+
+    var showInputBlock = configWidgetFields["show-input"] || "true";
+    return (showInputBlock === "true");
+};
+
+/*
 Retrieve the configuration state of the clear all button
 */
 
@@ -30,7 +42,7 @@ exports.shouldShowClearAll = function() {
 
     var showClearAll = configWidgetFields["show-clearall"] || "true";
     return (showClearAll === "true");
-}
+};
 
 /*
 Create list items
@@ -45,6 +57,9 @@ exports.parse = function() {
     listItems.push({
         type: "element",
         tag: "li",
+        attributes: {
+                class: {type: "string", value: this.showInput()?"":"hideme"}
+        },
         children: [
             {
                 type: "element",
